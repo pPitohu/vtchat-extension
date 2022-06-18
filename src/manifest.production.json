@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "VTchat-extension",
+  "description": " ",
+  "version": "0.1.0",
+  "background": {
+    "service_worker": "/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://vimetop.ru/*"],
+      "js": ["/content.js"]
+    }
+  ]
+}
