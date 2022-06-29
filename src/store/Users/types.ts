@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 export interface User {
   id: number;
   username: string;
@@ -7,12 +6,13 @@ export interface User {
   role: 'USER' | 'ADMIN';
 }
 
-export interface UserState {
-  user: User;
+export interface UsersState {
+  users: User[];
+  isLoading: boolean;
 }
 
 export interface Context {
-  state: UserState;
+  state: UsersState;
   commit: (arg0: string, arg1: any) => void;
   dispatch: (arg0: string, arg1: any) => void;
 }

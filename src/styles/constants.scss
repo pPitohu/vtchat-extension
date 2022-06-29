@@ -1,0 +1,35 @@
+$drawerBackground: linear-gradient(
+  to bottom right,
+  #7474bf 0%,
+  #348ac7 71%,
+  #7474bf 100%
+);
+$drawerBorderRadius: 18px 18px 0 0;
+$drawerHeight: 28px;
+$drawerWidth: 300px;
+
+$defaultTransition: 0.15s cubic-bezier(0.2, 0.6, 0.35, 1);
+
+$buttonGradient: linear-gradient(to bottom, #348ac7 0%, #7474bf 100%);
+
+$chatItemBackground: rgba(32, 32, 32, 0.05);
+$chatItemBorderRadius: 10px;
+$chatItemHoverBackground: rgba(32, 32, 32, 0.1);
+$chatItemSelected: #323232;
+
+$messageTextPreview: #989898;
+
+$onlineColor: #42b983;
+$offlineColor: rgb(255, 71, 87);
+$badgeTimeColor: #525287;
+
+$holyColor: #ffba2d;
+$immortalColor: #e800d5;
+$premiumColor: #00dada;
+$vipColor: #00be00;
+$playerColor: #989898;
+
+$selectedChatHeaderBackground: #323232;
+$selectedChatContentColor: rgba(119, 119, 119, 0.15);
+$selectedChatTextAreaColorHover: rgba(119, 119, 119, 0.25);
+$selectedChatTextAreaColorActive: rgba(119, 119, 119, 0.4);

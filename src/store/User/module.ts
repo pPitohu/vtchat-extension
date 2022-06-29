@@ -5,17 +5,12 @@ import { UserState } from '@/store/User/types';
 
 const state: UserState = {
   user: {
-    ac: 0,
-    anon: 0,
-    cid: '',
-    clan: 0,
-    rank: '',
+    id: -1,
     username: '',
-    vime_id: 0,
-    vk_id: 0
-  },
-  isAuthorized: false,
-  isStored: false
+    rank: 'PLAYER',
+    online: false,
+    role: 'USER'
+  }
 };
 
 export default {

@@ -1,0 +1,98 @@
+.selected-chat {
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+  padding-left: 10px;
+  &__header {
+    width: 100%;
+    padding: 3px 8px;
+    border-radius: 8px;
+    background: $selectedChatHeaderBackground;
+    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.8);
+    &-title {
+      @include flex(row, flex-start, center);
+      gap: 10px;
+      &_avatar {
+        max-width: 55px;
+        max-height: 55px;
+      }
+      &_name {
+        @include flex(column, center, flex-start);
+        gap: 3px;
+        .name-label {
+          font-size: 14px;
+        }
+        .online-label {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .selected-chat__content {
+    height: 100%;
+    &-messages {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      margin-bottom: 5px;
+      padding-bottom: 5px;
+      &-list {
+        padding-top: 10px;
+        padding-right: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        &-item {
+          &.my-message {
+            @include flex(row, flex-end);
+            .selected-chat__content-messages-list-item_wrapper {
+              @include flex(row-reverse, flex-start);
+            }
+            .selected-chat__content-messages-list-item-title {
+              text-align: right;
+            }
+            .selected-chat__content-messages-list-item-message_time {
+              text-align: left;
+            }
+          }
+          &_wrapper {
+            @include flex(row, flex-start);
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            padding: 7px;
+            width: fit-content;
+          }
+          &-content {
+            @include flex(column);
+            gap: 5px;
+          }
+          &-title {
+            font-size: 14px;
+          }
+          &-avatar {
+            &_avatar {
+              max-width: 40px;
+              max-height: 40px;
+            }
+          }
+          &-message {
+            width: 100%;
+            height: 100%;
+            min-width: 100px;
+            &_text {
+              font-size: 14px;
+              max-width: 260px;
+              word-wrap: break-word;
+            }
+            &_time {
+              font-size: 12px;
+              color: $chatItemBackground;
+              text-align: right;
+            }
+          }
+        }
+      }
+    }
+  }
+}

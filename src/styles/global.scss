@@ -1,0 +1,81 @@
+@import 'constants.scss';
+*::v-deep [class*='vs-'] {
+  outline: none !important;
+}
+
+.vs-dialog-content {
+  z-index: 9999999;
+  &.blur {
+    backdrop-filter: saturate(180%) blur(1px) !important;
+  }
+}
+
+*::v-deep .holy {
+  color: $holyColor;
+}
+*::v-deep .immortal {
+  color: $immortalColor;
+}
+*::v-deep .premium {
+  color: $premiumColor;
+}
+*::v-deep .vip {
+  color: $vipColor;
+}
+*::v-deep .player {
+  color: $playerColor;
+}
+
+.badge {
+  display: inline-block;
+  border-radius: 8px;
+  padding: 3px 7px;
+  color: #fff;
+  margin-right: 0;
+  cursor: default;
+  pointer-events: none;
+  user-select: none;
+}
+
+.online {
+  color: $onlineColor;
+}
+.offline {
+  color: $offlineColor;
+}
+.online-badge {
+  background-color: $onlineColor;
+}
+.offline-badge {
+  background-color: $offlineColor;
+}
+.badge-time {
+  background-color: $badgeTimeColor;
+}
+.badge-circle {
+  padding: 0;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50%;
+}
+
+::v-deep::-webkit-scrollbar {
+  width: 4px;
+}
+::v-deep::-webkit-scrollbar-thumb {
+  background-color: #d8d8d8 !important;
+}
+::v-deep::-webkit-scrollbar-track {
+  background-color: transparent !important;
+}
+
+@mixin flex(
+  $direction: row,
+  $justifyContent: flex-start,
+  $alignItems: flex-start
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}

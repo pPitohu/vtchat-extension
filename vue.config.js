@@ -14,6 +14,7 @@ const chromeName = getEntryFile(path.resolve('src/entry'));
 function getFileExtension(filename) {
   return /[.]/.exec(filename) ? /[^.]+$/.exec(filename)[0] : undefined;
 }
+
 chromeName.forEach((name) => {
   const fileExtension = getFileExtension(name);
   const fileName = name.replace('.' + fileExtension, '');
@@ -28,6 +29,7 @@ const isDevMode = process.env.NODE_ENV === 'development';
 
 module.exports = {
   pages,
+  runtimeCompiler: true,
   filenameHashing: false,
   chainWebpack: (config) => {
     config.plugin('copy').use(require('copy-webpack-plugin'), [
@@ -53,6 +55,10 @@ module.exports = {
     devtool: isDevMode ? 'inline-source-map' : false
   },
   css: {
-    extract: false // Make sure the css is the same
+    loaderOptions: {
+      sass: {
+        additionalData: '@import "@/styles/global.scss";'
+      }
+    }
   }
 };

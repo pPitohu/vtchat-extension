@@ -1,0 +1,45 @@
+.drawer-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 70%;
+  .drawer {
+    @include flex(row, center, center);
+    width: $drawerWidth;
+    height: $drawerHeight;
+    background-image: $drawerBackground;
+    background-size: auto 300%;
+    border-radius: $drawerBorderRadius;
+    transition: $defaultTransition;
+    position: relative;
+    &:hover {
+      background-position: bottom center;
+      cursor: pointer;
+    }
+    &:active {
+      background-position: top center;
+    }
+    .unread-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 12px;
+      font-weight: bold;
+      color: #fff;
+      background: crimson;
+      border-radius: 50%;
+      line-height: 1;
+      width: 24px;
+      height: 24px;
+      @include flex(row, center, center);
+      transform: translate(-65%, -35%);
+      user-select: none;
+    }
+    &-text {
+      color: #d8d8d8;
+      font-weight: bold;
+      user-select: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+  }
+}

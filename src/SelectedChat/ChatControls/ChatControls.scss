@@ -1,0 +1,91 @@
+.selected-chat__content-input {
+  @include flex(row, flex-start, center);
+  &_textarea {
+    height: 22px;
+    width: 100%;
+    overflow: auto;
+    outline: 0;
+    resize: none;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: content-box;
+    font-size: 14px;
+    border: 1px solid $selectedChatContentColor;
+    transition: $defaultTransition;
+    &:hover {
+      border: 1px solid $selectedChatTextAreaColorHover;
+    }
+    &:focus {
+      border: 1px solid $selectedChatTextAreaColorActive;
+      margin-top: -5px;
+      height: 27px;
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &-send {
+    @include flex(row, center, center);
+    position: relative;
+    .emoji-list {
+      position: absolute;
+      top: -230px;
+      left: -210px;
+      width: 235px;
+      height: 230px;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid $selectedChatTextAreaColorActive;
+      border-radius: 8px;
+      overflow: auto;
+      &-search {
+        width: 100%;
+        margin-bottom: 10px;
+        .regular-input {
+          padding: 5px;
+          border-radius: 8px;
+          border: 1px solid #ccc;
+          width: 100%;
+          height: 30px;
+          outline: none;
+          font-size: 14px;
+        }
+      }
+      &-category {
+        width: 100%;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        position: relative;
+        &:after {
+          position: absolute;
+          content: '';
+          bottom: 0;
+          left: 0;
+          background: $chatItemBackground;
+        }
+        &-title {
+          font-size: 16px;
+          margin-bottom: 5px;
+        }
+        &-items-wrapper {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 5px;
+        }
+        &-item {
+          margin: 0;
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+    &_emoji {
+      width: 35px;
+      height: 35px;
+    }
+    &_button {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

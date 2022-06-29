@@ -1,0 +1,24 @@
+.empty-chat {
+  width: 100%;
+  height: 100%;
+  @include flex(column, center, center);
+  &-heading {
+    color: $messageTextPreview;
+    font-size: 16px;
+    margin-top: 30px;
+    text-align: center;
+    line-height: 1.15;
+    max-width: 300px;
+  }
+  &-icon {
+    animation: rotate 5s infinite linear;
+  }
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
