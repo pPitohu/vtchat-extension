@@ -10,7 +10,7 @@
       <div class="selected-chat__content-messages-list-item-avatar">
         <img
           class="selected-chat__content-messages-list-item-avatar_avatar"
-          :src="`//skin.vimeworld.ru/helm/3d/${message.sender.username}.png`"
+          :src="`//skin.vimeworld.com/helm/3d/${message.sender.username}.png`"
           :alt="message.sender.username"
         />
       </div>

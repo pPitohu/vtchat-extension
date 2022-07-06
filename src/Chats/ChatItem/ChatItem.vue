@@ -5,7 +5,7 @@
   >
     <img
       class="chat-item__avatar"
-      :src="`//skin.vimeworld.ru/helm/3d/${user.username}.png`"
+      :src="`//skin.vimeworld.com/helm/3d/${user.username}.png`"
       :alt="user.username"
     />
     <div class="chat-item__content">

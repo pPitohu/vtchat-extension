@@ -4,7 +4,7 @@
       <div class="selected-chat__header-title">
         <img
           class="selected-chat__header-title_avatar"
-          :src="`//skin.vimeworld.ru/helm/3d/${reciever.username}.png`"
+          :src="`//skin.vimeworld.com/helm/3d/${reciever.username}.png`"
           :alt="reciever.username"
         />
         <div class="selected-chat__header-title_name">
