@@ -7,7 +7,9 @@ import {
   ADD_NEW_CHAT,
   SET_CHAT_MESSAGES,
   SOCKET_NEW_MESSAGE,
-  INSERT_NEW_MESSAGE
+  INSERT_NEW_MESSAGE,
+  SOCKET_USER_TYPING,
+  USER_TYPING
 } from '@/store/Chats/constants';
 
 export const actions = {
@@ -28,5 +30,11 @@ export const actions = {
   ) => {
     console.log('new message', chat);
     commit(INSERT_NEW_MESSAGE, chat);
+  },
+  [SOCKET_USER_TYPING]: (
+    { commit }: Context,
+    data: { chatId: string; username: string; isTyping: boolean }
+  ) => {
+    commit(USER_TYPING, data);
   }
 };

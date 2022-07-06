@@ -3,13 +3,8 @@ import { computed, ref, watch } from '@vue/composition-api';
 import store from '@/store';
 import router from '@/router';
 import { GET_ALL_USERS, GET_USER_BY_NAME } from '@/store/Users/constants';
-import {
-  GET_CHATS,
-  INIT_CHAT,
-  SET_CURRENT_CHAT
-} from '@/store/Chats/constants';
+import { INIT_CHAT } from '@/store/Chats/constants';
 import { socketEmit } from '@/helpers/socket';
-import { Chat } from '@/store/Chats/types';
 import { GET_USER } from '@/store/User/constants';
 
 const useApp = () => {
@@ -32,7 +27,7 @@ const useApp = () => {
         name: 'chats',
         params: { username }
       });
-    }, 50);
+    }, 100);
   };
 
   if (window.location.href.includes('player')) {
@@ -48,7 +43,7 @@ const useApp = () => {
       btn.className =
         'vs-button vs-button--null vs-button--size-null vs-button--circle vs-button--danger vs-button--default';
       btn.addEventListener('click', () => {
-        socketEmit(INIT_CHAT, { username: user.username });
+        socketEmit(INIT_CHAT, { sender: currentUser.value, reciever: user });
         openChatWith(user.username);
       });
       document

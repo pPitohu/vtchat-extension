@@ -4,7 +4,7 @@
 }
 
 .vs-dialog-content {
-  z-index: 9999999;
+  z-index: 999999;
   &.blur {
     backdrop-filter: saturate(180%) blur(1px) !important;
   }
@@ -67,6 +67,22 @@
 }
 ::v-deep::-webkit-scrollbar-track {
   background-color: transparent !important;
+}
+
+.typing {
+  color: white;
+  animation: fading 1.5s infinite;
+}
+@keyframes fading {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @mixin flex(

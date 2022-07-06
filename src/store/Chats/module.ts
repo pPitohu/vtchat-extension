@@ -6,7 +6,26 @@ import { ChatsState } from '@/store/Chats/types';
 const state: ChatsState = {
   currentChat: {
     _id: '',
-    members: ['', ''],
+    members: [
+      {
+        id: -1,
+        username: '',
+        rank: '',
+        online: false,
+        role: 'USER'
+      },
+      {
+        id: -1,
+        username: '',
+        rank: '',
+        online: false,
+        role: 'USER'
+      }
+    ],
+    typing: {
+      username: '',
+      isTyping: false
+    },
     messages: []
   },
   chats: [],

@@ -15,7 +15,8 @@
       </div>
       <div class="chat-item__content-text">
         <p class="chat-item__content-text_last-message">
-          {{ lastMessageText }}
+          <span v-show="isTyping" class="typing">печатает...</span>
+          <span v-show="!isTyping">{{ lastMessageText }}</span>
         </p>
         <div v-if="user.online" class="badge online-badge badge-circle"></div>
         <div v-else class="badge offline-badge badge-circle"></div>

@@ -1,14 +1,21 @@
+import { User } from '@/store/User/types';
+
 export interface Message {
   id: string;
   text: string;
   datetime: Date;
   sender: string;
   reciever: string;
+  isRead: boolean;
 }
 
 export interface Chat {
   _id: string;
-  members: [string, string];
+  typing: {
+    username: string;
+    isTyping: boolean;
+  };
+  members: [User, User];
   messages: Message[];
 }
 

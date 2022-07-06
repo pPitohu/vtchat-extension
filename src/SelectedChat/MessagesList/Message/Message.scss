@@ -1,0 +1,50 @@
+.selected-chat__content-messages-list-item {
+  &.my-message {
+    @include flex(row, flex-end);
+    .selected-chat__content-messages-list-item_wrapper {
+      @include flex(row-reverse, flex-start);
+    }
+    .selected-chat__content-messages-list-item-title {
+      text-align: right;
+    }
+    .selected-chat__content-messages-list-item-message_time {
+      text-align: left;
+    }
+  }
+  &_wrapper {
+    @include flex(row, flex-start);
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 7px;
+    width: fit-content;
+  }
+  &-content {
+    @include flex(column);
+    gap: 5px;
+  }
+  &-title {
+    font-size: 14px;
+  }
+  &-avatar {
+    &_avatar {
+      max-width: 40px;
+      max-height: 40px;
+    }
+  }
+  &-message {
+    width: 100%;
+    height: 100%;
+    min-width: 100px;
+    &_text {
+      font-size: 14px;
+      max-width: 260px;
+      word-wrap: break-word;
+    }
+    &_time {
+      font-size: 12px;
+      color: $chatItemBackground;
+      text-align: right;
+    }
+  }
+}
