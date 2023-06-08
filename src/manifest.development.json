@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "VTChat Extension",
-  "description": " ",
-  "version": "0.1.3",
+  "name": "VTChat - Чат на vimetop",
+  "description": "Расширение, добавляющее чат на сайт vimetop.ru и позволяющее общаться находясь на данном сайте, прямо как в популярных мессенджерах!",
+  "author": "vime.top/p/COCU_COCUCKA",
+  "version": "1.1.4",
   "background": {
     "service_worker": "/background.js"
   },
@@ -11,5 +12,8 @@
       "matches": ["https://vimetop.ru/*"],
       "js": ["/content.js"]
     }
-  ]
+  ],
+  "icons": {
+    "128": "/128.png"
+  }
 }

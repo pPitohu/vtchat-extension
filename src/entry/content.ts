@@ -18,14 +18,14 @@ Vue.config.productionTip = false;
 
 const session = parseSessionVariable() as any;
 
-const host = 'https://vtchat-websocket.herokuapp.com';
+const host = 'https://vtchat-websocket.onrender.com';
 // const host = 'http://localhost:1111';
 
 const SocketInstance = socketio(host, {
   auth: {
     username: session.username,
     id: session.vime_id,
-    rank: session.rank
+    rank: session.rank || 'PLAYER'
   }
 });
 
@@ -41,15 +41,16 @@ Vue.use(VEmojiPicker);
 const load = () => {
   document.head.innerHTML +=
     '<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">';
-  $.holdReady(true);
+  // $.holdReady(true); apply if open button not appears on the page
   const app = new Vue({
     router,
     store,
     render: (h) => h(App),
     mounted() {
-      $.holdReady(false);
+      // $.holdReady(false);
     }
   });
   document.body.appendChild(app.$mount().$el);
 };
+
 load();

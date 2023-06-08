@@ -10,7 +10,11 @@ const useChats = () => {
     localStorage.getItem('VTChat_isMyChatsActive') === 'true'
   );
   const currentUser = computed(() => store.getters[GET_USER]);
-  const users = computed(() => store.getters[GET_ALL_USERS]);
+  const users = computed(() =>
+    store.getters[GET_ALL_USERS]?.filter(
+      (user: any) => user.username !== currentUser.value.username
+    )
+  );
 
   const chatUsers = computed(() =>
     store.getters[GET_CHATS].map((chat: any) =>
@@ -27,7 +31,7 @@ const useChats = () => {
       isMyChatsActive.value.toString()
     )
   );
-  watch(chatUsers, () => console.log(chatUsers.value));
+  // watch(chatUsers, () => console.log(chatUsers.value));
   return {
     users,
     chatUsers,

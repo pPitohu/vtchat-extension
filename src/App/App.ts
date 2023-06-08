@@ -34,6 +34,7 @@ const useApp = () => {
     const parsedNickname = window.location.pathname.split('/')[2];
 
     watch(users, () => {
+      if (currentUser.value.username === parsedNickname) return;
       const user = store.getters[GET_USER_BY_NAME](parsedNickname);
       if (!user || document.querySelector('.vt-chat-send-button')) return;
       const btn = document.createElement('button');

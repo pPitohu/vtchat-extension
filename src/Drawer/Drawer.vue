@@ -2,7 +2,7 @@
   <div class="drawer-wrapper">
     <div class="drawer" @click="() => $emit('openModal')">
       <div class="drawer-text">Открыть VTChat</div>
-      <div class="unread-badge">5</div>
+      <!-- <div class="unread-badge">5</div> -->
     </div>
   </div>
 </template>

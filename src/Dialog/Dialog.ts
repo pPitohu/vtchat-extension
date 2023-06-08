@@ -10,7 +10,7 @@ const useDialog = (props: any, context: any) => {
   );
 
   const emitCloseModal = () => {
-    // console.clear();
+    console.clear();
     context.emit('closeModal');
   };
 

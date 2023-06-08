@@ -1,7 +1,7 @@
 .drawer-wrapper {
   position: fixed;
   bottom: 0;
-  left: 70%;
+  left: 65%;
   .drawer {
     @include flex(row, center, center);
     width: $drawerWidth;

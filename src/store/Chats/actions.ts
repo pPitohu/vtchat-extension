@@ -17,18 +17,18 @@ export const actions = {
     commit(SET_CHATS, chats);
   },
   [SOCKET_NEW_CHAT]: ({ commit }: Context, chat: Chat) => {
-    console.log('new chat', chat);
+    // console.log('new chat', chat);
     commit(ADD_NEW_CHAT, chat);
   },
   [SOCKET_EXISTING_CHAT]: ({ commit }: Context, chat: Chat) => {
-    console.log('existing', chat);
+    // console.log('existing', chat);
     commit(SET_CHAT_MESSAGES, chat);
   },
   [SOCKET_NEW_MESSAGE]: (
     { commit }: Context,
     chat: { chatId: string; msg: Message }
   ) => {
-    console.log('new message', chat);
+    // console.log('new message', chat);
     commit(INSERT_NEW_MESSAGE, chat);
   },
   [SOCKET_USER_TYPING]: (
